@@ -2,22 +2,22 @@ import React from 'react'
 import Header from './Header'
 import InputTodo from './InputTodo'
 import TodosList from './TodosList'
-import uuid from 'uuid'
+import uuid from 'uuid/v4';
 class TodoContainer extends React.Component {
   state = {
     todos: [
       {
-        id: uuid.v4(),
+        id: uuid(),
         title: "Setup development environment",
         completed: true
       },
       {
-        id: uuid.v4(),
+        id: uuid(),
         title: "Develop website and add content",
         completed: false
       },
       {
-        id: uuid.v4(),
+        id: uuid(),
         title: "Deploy to live server",
         completed: false
       }
@@ -47,7 +47,7 @@ class TodoContainer extends React.Component {
 
   addTodoItem = title => {
     const newTodo = {
-      id: uuid.v4(),
+      id: uuid(),
       title: title,
       completed: false
     };
