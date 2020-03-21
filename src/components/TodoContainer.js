@@ -20,6 +20,11 @@ class TodoContainer extends React.Component {
         id: uuid(),
         title: "Deploy to live server",
         completed: false
+      },
+      {
+        id: uuid(),
+        title: "Working from home",
+        completed: true
       }
     ]
   };
