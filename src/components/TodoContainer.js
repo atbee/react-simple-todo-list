@@ -3,6 +3,8 @@ import Header from './Header'
 import InputTodo from './InputTodo'
 import TodosList from './TodosList'
 import uuid from 'uuid/v4';
+import MetaTags from 'react-meta-tags';
+
 class TodoContainer extends React.Component {
   state = {
     todos: [
@@ -63,14 +65,22 @@ class TodoContainer extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <Header />
-        <InputTodo addTodoProps={this.addTodoItem} />
-        <TodosList
-          todos={this.state.todos}
-          handleChangeProps={this.handleChange}
-          deleteTodoProps={this.delTodo}
-        />
+      <div className="wrapper">
+        <MetaTags>
+          <title>Simple Todo App</title>
+          <meta name="description" content="My React App" />
+          <meta property="og:title" content="My Simple Todo App" />
+          <meta property="og:image" content="./cover.png" />
+        </MetaTags>
+        <div className="container">
+          <Header />
+          <InputTodo addTodoProps={this.addTodoItem} />
+          <TodosList
+            todos={this.state.todos}
+            handleChangeProps={this.handleChange}
+            deleteTodoProps={this.delTodo}
+          />
+        </div>
       </div>
     );
   }
